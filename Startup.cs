@@ -44,7 +44,6 @@ namespace CityApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CityApi v1"));
-                UseDefaultFiles & UseStaticFiles
                 FileServerOptions fileServerOptions = new FileServerOptions();
                 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
                 fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("index.html");
