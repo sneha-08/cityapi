@@ -2,7 +2,7 @@ var app = new (function () {
     this.fruits = [];
     this.updateindex = 0;
     this.getFruits = function () {
-      fetch("https://snehacityapi.herokuapp.com/api/Fruits")
+      fetch("https://localhost:5001/api/Fruits")
         .then((response) => response.json())
         .then((data) => {
           // console.log(data);
@@ -35,7 +35,7 @@ var app = new (function () {
     this.save = function () {
       document.getElementById("fname").value;
       alert(document.getElementById("fname").value);
-      fetch("https://snehacityapi.herokuapp.com/api/Fruits", {
+      fetch("https://localhost:5001/api/Fruits", {
         method: "post",
         headers: {
           Accept: "application/json",
@@ -67,7 +67,7 @@ var app = new (function () {
           name: document.getElementById("fname").value
       }));
       // PUT to the resource with id = 5 to change the name of task
-  fetch('https://snehacityapi.herokuapp.com/api/Fruits/'+this.updateindex, {
+  fetch('https://localhost:5001/api/Fruits/'+this.updateindex, {
       method: 'PUT',
       body: JSON.stringify({
           id: this.updateindex,
@@ -89,7 +89,7 @@ var app = new (function () {
     
     this.updateindex = this.fruits[i].id;
     alert("delete called " +this.updateindex);
-    fetch('https://snehacityapi.herokuapp.com/api/Fruits/'+this.updateindex, {
+    fetch('https://localhost:5001/api/Fruits/'+this.updateindex, {
     // fetch(`${uri}/${id}`, {
       method: 'DELETE'
     })
